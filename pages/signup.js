@@ -34,8 +34,7 @@ class SignUp extends React.Component {
               <Input name="gender" value="female" label="Female" type="radio" />
             </Row>
             <Row>
-              <Input type="date" label="Birthday" s={6} />
-              <Input type="text" label="ZipCode" s={6} />
+              <Input type="text" label="ZipCode" s={12} />
             </Row>
             <Row style={{ textAlign: "center" }}>
               <Button>Sign Up</Button>

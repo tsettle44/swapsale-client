@@ -1692,21 +1692,12 @@ function (_React$Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        type: "date",
-        label: "Birthday",
-        s: 6,
+        type: "text",
+        label: "ZipCode",
+        s: 12,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        type: "text",
-        label: "ZipCode",
-        s: 6,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Row"], {
@@ -1715,13 +1706,13 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 39
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 40
         },
         __self: this
       }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -1730,20 +1721,20 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
         href: "login",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 45
         },
         __self: this
       }, "Already have an account?")))));
