@@ -1,5 +1,11 @@
+import Layout from "../components/Layout";
+
 function Home() {
-  return <div>Welcome to swapsale</div>;
+  return (
+    <Layout>
+      <h1>Welcome to swapsale</h1>
+    </Layout>
+  );
 }
 
 export default Home;
