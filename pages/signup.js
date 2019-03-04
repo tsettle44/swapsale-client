@@ -15,15 +15,27 @@ class SignUp extends React.Component {
           <h3 style={{ textAlign: "center" }}>Sign Up</h3>
           <form style={{ maxWidth: "500px", margin: "0 auto" }}>
             <Row>
-              <Input placeholder="Email" s={12} label="Email" type="email" />
+              <Input s={6} label="First Name" type="text" />
+
+              <Input s={6} label="Last Name" type="text" />
             </Row>
             <Row>
-              <Input
-                placeholder="Password"
-                s={12}
-                label="Password"
-                type="password"
-              />
+              <Input s={12} label="Email" type="email" />
+            </Row>
+            <Row>
+              <Input s={12} label="Password" type="password" />
+            </Row>
+            <Row>
+              <Input s={12} label="Confirm Password" type="password" />
+            </Row>
+            <Row>
+              <Input s={6} label="Phone Number" type="text" />
+              <Input name="gender" value="male" label="Male" type="radio" />
+              <Input name="gender" value="female" label="Female" type="radio" />
+            </Row>
+            <Row>
+              <Input type="date" label="Birthday" s={6} />
+              <Input type="text" label="ZipCode" s={6} />
             </Row>
             <Row style={{ textAlign: "center" }}>
               <Button>Sign Up</Button>

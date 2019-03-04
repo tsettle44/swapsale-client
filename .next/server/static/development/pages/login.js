@@ -1588,7 +1588,6 @@ function (_React$Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        placeholder: "Email",
         s: 12,
         label: "Email",
         type: "email",
@@ -1604,45 +1603,12 @@ function (_React$Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        placeholder: "Email",
-        s: 12,
-        label: "Email",
-        type: "email",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        placeholder: "Email",
-        s: 12,
-        label: "Email",
-        type: "email",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Row"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Input"], {
-        placeholder: "Password",
         s: 12,
         label: "Password",
         type: "password",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 21
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Row"], {
@@ -1651,16 +1617,38 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 24
         },
         __self: this
-      }, "Log In")))));
+      }, "Log In"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: {
+          textAlign: "center"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
+        href: "signup",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, "Don't have an account?")))));
     }
   }]);
 
