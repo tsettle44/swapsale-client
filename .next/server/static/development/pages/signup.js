@@ -107,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-server/head */ "next-server/head");
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\components\\Layout.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Layout.js";
 
 
 
@@ -203,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-materialize */ "react-materialize");
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\components\\Navbar.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Navbar.js";
 
 
 
@@ -1533,7 +1533,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\pages\\signup.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\pages\\signup.js";
 
 
 
@@ -1564,7 +1564,7 @@ function (_React$Component) {
       email: "",
       password: "",
       confirmPass: "",
-      phone: "",
+      phone: 0,
       zipCode: 0
     });
 
@@ -1642,17 +1642,17 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "SignUp", function () {
-      console.log(_this.state);
-      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_13___default()("http://localhost:5000/api/users/sign-up", {
+      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_13___default()("http://localhost:5000/api/users/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()({
-          name: _this.state.firstName + " " + _this.state.lastName,
+          firstName: _this.state.firstName,
+          lastName: _this.state.lastName,
           email: _this.state.email,
           password: _this.state.password,
-          phone: _this.state.phone,
+          phone: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(_this.state.phone),
           zipCode: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(_this.state.zipCode)
         })
       }).then(function (r) {
@@ -1867,7 +1867,7 @@ function (_React$Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\tsettle44\Desktop\swapsale-client\pages\signup.js */"./pages/signup.js");
+module.exports = __webpack_require__(/*! C:\Users\Tom Settle\Desktop\swapsale\pages\signup.js */"./pages/signup.js");
 
 
 /***/ }),

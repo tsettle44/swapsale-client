@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-server/head */ "./node_modules/next-server/head.js");
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\components\\Layout.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Layout.js";
 
 
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-materialize */ "./node_modules/react-materialize/lib/index.js");
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\components\\Navbar.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Navbar.js";
 
 
 
@@ -6697,10 +6697,10 @@ module.exports = __webpack_require__(/*! ./dist/lib/head */ "./node_modules/next
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5Ctsettle44%5CDesktop%5Cswapsale-client%5Cpages%5Csignup.js!./":
-/*!*******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5Ctsettle44%5CDesktop%5Cswapsale-client%5Cpages%5Csignup.js ***!
-  \*******************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js!./":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16777,7 +16777,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\tsettle44\\Desktop\\swapsale-client\\pages\\signup.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\pages\\signup.js";
 
 
 
@@ -16808,7 +16808,7 @@ function (_React$Component) {
       email: "",
       password: "",
       confirmPass: "",
-      phone: "",
+      phone: 0,
       zipCode: 0
     });
 
@@ -16886,17 +16886,17 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "SignUp", function () {
-      console.log(_this.state);
-      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_13___default()("http://localhost:5000/api/users/sign-up", {
+      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_13___default()("http://localhost:5000/api/users/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()({
-          name: _this.state.firstName + " " + _this.state.lastName,
+          firstName: _this.state.firstName,
+          lastName: _this.state.lastName,
           email: _this.state.email,
           password: _this.state.password,
-          phone: _this.state.phone,
+          phone: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(_this.state.phone),
           zipCode: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(_this.state.zipCode)
         })
       }).then(function (r) {
@@ -17105,13 +17105,13 @@ function (_React$Component) {
 /***/ }),
 
 /***/ 3:
-/*!***********************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5Ctsettle44%5CDesktop%5Cswapsale-client%5Cpages%5Csignup.js ***!
-  \***********************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js ***!
+  \*******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5Ctsettle44%5CDesktop%5Cswapsale-client%5Cpages%5Csignup.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5Ctsettle44%5CDesktop%5Cswapsale-client%5Cpages%5Csignup.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js!./");
 
 
 /***/ }),

@@ -10,7 +10,7 @@ class SignUp extends React.Component {
     email: "",
     password: "",
     confirmPass: "",
-    phone: "",
+    phone: 0,
     zipCode: 0
   };
 
@@ -78,17 +78,17 @@ class SignUp extends React.Component {
   };
 
   SignUp = () => {
-    console.log(this.state);
-    fetch("http://localhost:5000/api/users/sign-up", {
+    fetch("http://localhost:5000/api/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: this.state.firstName + " " + this.state.lastName,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         email: this.state.email,
         password: this.state.password,
-        phone: this.state.phone,
+        phone: parseInt(this.state.phone),
         zipCode: parseInt(this.state.zipCode)
       })
     }).then(r => {
