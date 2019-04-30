@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layouts/Layout";
 import Link from "next/link";
 import { Row, Input, Button } from "react-materialize";
 

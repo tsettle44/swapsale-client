@@ -1,9 +1,10 @@
-import Layout from "../components/Layout";
+import Layout from "../components/Layouts/Layout";
+import Body from "../components/Home/Body";
 
 function Home() {
   return (
     <Layout>
-      <h1>Welcome to swapsale</h1>
+      <Body />
     </Layout>
   );
 }
