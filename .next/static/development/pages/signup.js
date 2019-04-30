@@ -1,5 +1,72 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\signup.js"],{
 
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-materialize */ "./node_modules/react-materialize/lib/index.js");
+/* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\CODE\\swapsale\\components\\Footer.js";
+
+//import Link from "next/link";
+
+
+var Bottom = function Bottom() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_1__["Footer"], {
+    copyrights: "&copy 2019 Copyright Text",
+    moreLinks: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      },
+      __self: this
+    }),
+    links: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8
+      },
+      __self: this
+    }),
+    className: "example",
+    style: {
+      position: "relative",
+      bottom: "0",
+      width: "100%"
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    className: "white-text",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "Footer Content"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "grey-text text-lighten-4",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "You can use rows and columns here to organize your footer content."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Bottom);
+
+/***/ }),
+
 /***/ "./components/Layout.js":
 /*!******************************!*\
   !*** ./components/Layout.js ***!
@@ -14,7 +81,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-server/head */ "./node_modules/next-server/head.js");
 /* harmony import */ var next_server_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_server_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
-var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Layout.js";
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\CODE\\swapsale\\components\\Layout.js";
+
 
 
 
@@ -23,19 +92,19 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_server_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, "SwapSale"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -43,7 +112,7 @@ var Layout = function Layout(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -51,41 +120,50 @@ var Layout = function Layout(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      minHeight: "100vh"
+    },
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://code.jquery.com/jquery-2.1.1.min.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 27
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 28
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
     src: "path/to/your/bundle.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 29
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
     },
     __self: this
   }));
@@ -110,13 +188,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-materialize */ "./node_modules/react-materialize/lib/index.js");
 /* harmony import */ var react_materialize__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_materialize__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\components\\Navbar.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\CODE\\swapsale\\components\\Navbar.js";
 
 
 
 
 var Nav = function Nav() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    style: {
+      paddingRight: "10px",
+      paddingLeft: "10px"
+    },
     brand: "SwapSale",
     right: true,
     __source: {
@@ -128,41 +210,50 @@ var Nav = function Nav() {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    style: {
+      marginRight: "10px"
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 11
     },
     __self: this
   }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/login",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    style: {
+      marginRight: "10px"
+    },
     waves: "light",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 14
     },
     __self: this
   }, "Log In")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    style: {
+      textAlign: "center"
+    },
     href: "/signup",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_materialize__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     waves: "light",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 19
     },
     __self: this
   }, "Sign Up")));
@@ -6697,10 +6788,10 @@ module.exports = __webpack_require__(/*! ./dist/lib/head */ "./node_modules/next
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js!./":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js ***!
-  \***************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5CCODE%5Cswapsale%5Cpages%5Csignup.js!./":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5CCODE%5Cswapsale%5Cpages%5Csignup.js ***!
+  \**********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16777,7 +16868,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\swapsale\\pages\\signup.js";
+var _jsxFileName = "C:\\Users\\Tom Settle\\Desktop\\CODE\\swapsale\\pages\\signup.js";
 
 
 
@@ -17104,14 +17195,14 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js ***!
-  \*******************************************************************************************************************************************/
+/***/ 4:
+/*!**************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5CCODE%5Cswapsale%5Cpages%5Csignup.js ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5Cswapsale%5Cpages%5Csignup.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5CCODE%5Cswapsale%5Cpages%5Csignup.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fsignup&absolutePagePath=C%3A%5CUsers%5CTom%20Settle%5CDesktop%5CCODE%5Cswapsale%5Cpages%5Csignup.js!./");
 
 
 /***/ }),
@@ -17127,5 +17218,5 @@ module.exports = dll_3681e7fd756237ce51c6;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=signup.js.map

@@ -2,14 +2,20 @@ import Link from "next/link";
 import { Button, Navbar, NavItem } from "react-materialize";
 
 const Nav = () => (
-  <Navbar brand="SwapSale" right>
+  <Navbar
+    style={{ paddingRight: "10px", paddingLeft: "10px" }}
+    brand="SwapSale"
+    right
+  >
     <Link href="/about">
-      <NavItem>About</NavItem>
+      <NavItem style={{ marginRight: "10px" }}>About</NavItem>
     </Link>
     <Link href="/login">
-      <Button waves="light">Log In</Button>
+      <Button style={{ marginRight: "10px" }} waves="light">
+        Log In
+      </Button>
     </Link>
-    <Link href="/signup">
+    <Link style={{ textAlign: "center" }} href="/signup">
       <Button waves="light">Sign Up</Button>
     </Link>
   </Navbar>

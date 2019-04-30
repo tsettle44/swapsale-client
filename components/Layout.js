@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "./Navbar";
+import Bottom from "./Footer";
 
 const Layout = props => (
   <div>
@@ -15,10 +16,18 @@ const Layout = props => (
       />
     </Head>
     <Navbar />
-    <div className="container">{props.children}</div>
+    <div
+      style={{
+        minHeight: "100vh"
+      }}
+      className="container"
+    >
+      {props.children}
+    </div>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js" />
     <script src="path/to/your/bundle.js" />
+    <Bottom />
   </div>
 );
 
