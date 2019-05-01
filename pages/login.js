@@ -34,12 +34,18 @@ class Login extends React.Component {
         email: this.state.email,
         password: this.state.password
       })
-    }).then(r => {
-      if (r.status === 200) {
-        console.log(r);
+    })
+      .then(r => {
+        return r.json();
+      })
+      .then(function(myJson) {
+        var d = new Date();
+        d.setTime(d.getTime() + 0.1 * 24 * 60 * 60 * 1000);
+        var expires = "expires=" + d.toUTCString();
+        document.cookie =
+          "id" + "=" + JSON.stringify(myJson) + ";" + expires + ";path=/";
         Router.push("/");
-      }
-    });
+      });
   };
 
   render() {
