@@ -1,5 +1,6 @@
 import Layout from "../components/Layouts/Layout";
 import Link from "next/link";
+import Router from "next/router";
 import { Row, Input, Button } from "react-materialize";
 import fetch from "isomorphic-unfetch";
 
@@ -92,7 +93,9 @@ class SignUp extends React.Component {
         zipCode: parseInt(this.state.zipCode)
       })
     }).then(r => {
-      console.log(r);
+      if (r.status === 201) {
+        Router.push("/");
+      }
     });
   };
 
