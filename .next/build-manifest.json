@@ -11,19 +11,23 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/about": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/login": [
+    "/signup": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/about": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/next/dist/pages/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/login": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
