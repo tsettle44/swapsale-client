@@ -1,5 +1,14 @@
-import { Input, Button, Row, Col, Card } from "react-materialize";
+import {
+  Input,
+  Button,
+  Row,
+  Col,
+  Card,
+  CardTitle,
+  ProgressBar
+} from "react-materialize";
 import Link from "next/link";
+import Preloader from "react-materialize/lib/Preloader";
 
 class Body extends React.Component {
   state = {
@@ -15,6 +24,7 @@ class Body extends React.Component {
         return r.json();
       })
       .then(res => {
+        document.getElementById("loader").style.display = "none";
         this.setState({ items: res, rows: Math.ceil(res.length / 3) });
       });
   }
@@ -32,12 +42,24 @@ class Body extends React.Component {
           <Button>Post Item</Button>
         </Link>
         <Row>
+          <Col
+            id="loader"
+            style={{ paddingTop: "100px", display: "block" }}
+            s={12}
+          >
+            <ProgressBar />
+          </Col>
+        </Row>
+        <Row>
           {this.state.items.map((item, i) => (
             <Link key={i} href={`/item?id=${item._id}`}>
               <Col l={4} m={6} s={12} key={i}>
                 <Card
-                  className="blue-grey darken-1"
-                  textClassName="white-text"
+                  header={<CardTitle />}
+                  actions={[
+                    <a>${item.price}</a>,
+                    <a>Zip Code: {item.zipCode}</a>
+                  ]}
                   title={item.name}
                 >
                   {item.description}

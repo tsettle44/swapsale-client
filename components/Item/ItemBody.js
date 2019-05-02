@@ -1,3 +1,5 @@
+import { Row, Col, Preloader } from "react-materialize";
+
 class ItemBody extends React.Component {
   state = {
     item: [],
@@ -12,6 +14,7 @@ class ItemBody extends React.Component {
         return r.json();
       })
       .then(res => {
+        document.getElementById("loader").style.display = "none";
         this.setState({ item: res });
       });
   }
@@ -19,6 +22,14 @@ class ItemBody extends React.Component {
   render() {
     return (
       <div>
+        <Row
+          id="loader"
+          style={{ paddingTop: "30vh", textAlign: "center", display: "block" }}
+        >
+          <Col s={12}>
+            <Preloader />
+          </Col>
+        </Row>
         {this.state.item.map((item, i) => (
           <div>
             <h1>{item.name}</h1>
