@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import Router from "next/router";
 
-class Body extends React.Component {
+class SearchBody extends React.Component {
   state = {
     items: [],
     rows: 0,
@@ -18,7 +18,7 @@ class Body extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:5000/api/items", {
+    fetch(`http://localhost:5000/api/items/search/${this.props.value}`, {
       method: "GET"
     })
       .then(r => {
@@ -30,21 +30,25 @@ class Body extends React.Component {
       });
   }
 
-  FindItem = e => {
+  SearchValue = e => {
     e.preventDefault();
     this.setState({ search: e.target.value });
   };
 
   Search = e => {
     e.preventDefault();
-    Router.push(`/search?value=${this.state.search}`);
+    window.location.assign(`/search?value=${this.state.search}`);
   };
 
   render() {
     return (
       <div>
         <form onSubmit={this.Search}>
-          <Input label="Search" onChange={this.FindItem} />
+          <Input
+            label="Search"
+            onChange={this.SearchValue}
+            placeholder={this.props.value}
+          />
         </form>
         <Link href="/postItem">
           <Button>Post Item</Button>
@@ -82,4 +86,4 @@ class Body extends React.Component {
   }
 }
 
-export default Body;
+export default SearchBody;
