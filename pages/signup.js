@@ -79,35 +79,47 @@ class SignUp extends React.Component {
   };
 
   SignUp = () => {
-    document.getElementById("form").style.display = "none";
+    if (
+      this.state.firstName === "" ||
+      this.state.lastName === "" ||
+      this.state.email === "" ||
+      this.state.password === "" ||
+      this.state.phone === "" ||
+      this.state.zipCode === ""
+    ) {
+      alert("Please fill in all fields.");
+    } else {
+      document.getElementById("form").style.display = "none";
 
-    document.getElementById("loader").style.display = "block";
+      document.getElementById("loader").style.display = "block";
 
-    fetch("http://localhost:5000/api/users/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        password: this.state.password,
-        phone: parseInt(this.state.phone),
-        zipCode: parseInt(this.state.zipCode)
+      fetch("http://localhost:5000/api/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
+          password: this.state.password,
+          phone: parseInt(this.state.phone),
+          zipCode: parseInt(this.state.zipCode)
+        })
       })
-    })
-      .then(r => {
-        return r.json();
-      })
-      .then(function(myJson) {
-        var d = new Date();
-        d.setTime(d.getTime() + 0.1 * 24 * 60 * 60 * 1000);
-        var expires = "expires=" + d.toUTCString();
-        document.cookie =
-          "id" + "=" + JSON.stringify(myJson) + ";" + expires + ";path=/";
-        Router.push("/");
-      });
+        .then(r => {
+          return r.json();
+        })
+        .then(function(myJson) {
+          console.log(myJson);
+          var d = new Date();
+          d.setTime(d.getTime() + 0.1 * 24 * 60 * 60 * 1000);
+          var expires = "expires=" + d.toUTCString();
+          document.cookie =
+            "id" + "=" + JSON.stringify(myJson) + ";" + expires + ";path=/";
+          Router.push("/");
+        });
+    }
   };
 
   render() {
