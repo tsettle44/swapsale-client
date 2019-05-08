@@ -50,8 +50,9 @@ class SearchBody extends React.Component {
             placeholder={this.props.value}
           />
         </form>
+        <Button onClick={this.Search}>Search</Button>
         <Link href="/postItem">
-          <Button>Post Item</Button>
+          <Button style={{ float: "right" }}>Post Item</Button>
         </Link>
         <Row>
           <Col
