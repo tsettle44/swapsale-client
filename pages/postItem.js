@@ -11,6 +11,12 @@ class PostItem extends React.Component {
     zipCode: 0
   };
 
+  componentDidMount() {
+    if (!document.cookie) {
+      Router.push("/login");
+    }
+  }
+
   formatName = e => {
     e.preventDefault();
     this.setState({
