@@ -1,7 +1,7 @@
 import Layout from "../components/Layouts/Layout";
 import Link from "next/link";
 import Router from "next/router";
-import { Row, Input, Button } from "react-materialize";
+import { Row, Col, Input, Button, Preloader } from "react-materialize";
 
 class Login extends React.Component {
   state = {
@@ -25,6 +25,7 @@ class Login extends React.Component {
 
   LogIn = e => {
     e.preventDefault();
+    document.getElementById("loader").style.display = "block";
     fetch("http://localhost:5000/api/users/login", {
       method: "POST",
       headers: {
@@ -57,6 +58,17 @@ class Login extends React.Component {
             style={{ maxWidth: "500px", margin: "0 auto" }}
             onSubmit={this.LogIn}
           >
+            <Row
+              id="loader"
+              style={{
+                textAlign: "center",
+                display: "none"
+              }}
+            >
+              <Col s={12}>
+                <Preloader />
+              </Col>
+            </Row>
             <Row>
               <Input
                 s={12}
