@@ -6,6 +6,7 @@ class Nav extends React.Component {
   componentDidMount() {
     if (document.cookie.substring(0, 2) === "id") {
       document.getElementById("logout").style.display = "inline";
+      document.getElementById("profile").style.display = "inline";
       document.getElementById("login").style.display = "none";
       document.getElementById("signin").style.display = "none";
     }
@@ -35,6 +36,14 @@ class Nav extends React.Component {
           <Button id="signin" waves="light">
             Sign Up
           </Button>
+        </Link>
+        <Link href="/profile">
+          <NavItem
+            id="profile"
+            style={{ marginRight: "10px", display: "none" }}
+          >
+            Profile
+          </NavItem>
         </Link>
         <Button
           onClick={this.logout}
