@@ -25,7 +25,11 @@ class Login extends React.Component {
 
   LogIn = e => {
     e.preventDefault();
+
+    document.getElementById("form").style.display = "none";
+
     document.getElementById("loader").style.display = "block";
+
     fetch("http://localhost:5000/api/users/login", {
       method: "POST",
       headers: {
@@ -62,32 +66,37 @@ class Login extends React.Component {
               id="loader"
               style={{
                 textAlign: "center",
-                display: "none"
+                display: "none",
+                paddingTop: "10vh"
               }}
             >
               <Col s={12}>
                 <Preloader />
               </Col>
             </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Email"
-                type="email"
-                onChange={this.formatEmail}
-              />
-            </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Password"
-                type="password"
-                onChange={this.formatPass}
-              />
-            </Row>
-            <Row style={{ textAlign: "center" }}>
-              <Button>Log In</Button>
-            </Row>
+            <div id="form">
+              <Row>
+                <Input
+                  s={12}
+                  label="Email"
+                  type="email"
+                  onChange={this.formatEmail}
+                />
+              </Row>
+              <Row>
+                <Input
+                  s={12}
+                  label="Password"
+                  type="password"
+                  onChange={this.formatPass}
+                />
+              </Row>
+              <Row style={{ textAlign: "center" }}>
+                <Button>
+                  <div id="text">Log In</div>
+                </Button>
+              </Row>
+            </div>
           </form>
           <div style={{ textAlign: "center" }}>
             <Link href="signup">

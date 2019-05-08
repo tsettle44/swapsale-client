@@ -1,7 +1,7 @@
 import Layout from "../components/Layouts/Layout";
 import Link from "next/link";
 import Router from "next/router";
-import { Row, Input, Button } from "react-materialize";
+import { Row, Input, Button, Col, Preloader } from "react-materialize";
 import fetch from "isomorphic-unfetch";
 
 class SignUp extends React.Component {
@@ -79,6 +79,10 @@ class SignUp extends React.Component {
   };
 
   SignUp = () => {
+    document.getElementById("form").style.display = "none";
+
+    document.getElementById("loader").style.display = "block";
+
     fetch("http://localhost:5000/api/users/signup", {
       method: "POST",
       headers: {
@@ -115,71 +119,85 @@ class SignUp extends React.Component {
             onSubmit={this.validate}
             style={{ maxWidth: "500px", margin: "0 auto" }}
           >
-            <Row>
-              <Input
-                s={6}
-                label="First Name"
-                type="text"
-                name="fName"
-                onChange={this.formatFname}
-              />
+            <Row
+              id="loader"
+              style={{
+                textAlign: "center",
+                display: "none",
+                paddingTop: "10vh"
+              }}
+            >
+              <Col s={12}>
+                <Preloader />
+              </Col>
+            </Row>
+            <div id="form">
+              <Row>
+                <Input
+                  s={6}
+                  label="First Name"
+                  type="text"
+                  name="fName"
+                  onChange={this.formatFname}
+                />
 
-              <Input
-                s={6}
-                label="Last Name"
-                type="text"
-                name="lName"
-                onChange={this.formatLname}
-              />
-            </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Email"
-                type="email"
-                name="email"
-                onChange={this.formatEmail}
-              />
-            </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Password"
-                type="password"
-                name="password"
-                onChange={this.formatPass}
-              />
-            </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Confirm Password"
-                type="password"
-                name="confirmPass"
-                onChange={this.formatConfirmPass}
-              />
-            </Row>
-            <Row>
-              <Input
-                s={12}
-                label="Phone Number"
-                type="text"
-                name="phone"
-                onChange={this.formatPhone}
-              />
-            </Row>
-            <Row>
-              <Input
-                type="text"
-                label="ZipCode"
-                s={12}
-                name="zipCode"
-                onChange={this.formatZip}
-              />
-            </Row>
-            <Row style={{ textAlign: "center" }}>
-              <Button>Sign Up</Button>
-            </Row>
+                <Input
+                  s={6}
+                  label="Last Name"
+                  type="text"
+                  name="lName"
+                  onChange={this.formatLname}
+                />
+              </Row>
+              <Row>
+                <Input
+                  s={12}
+                  label="Email"
+                  type="email"
+                  name="email"
+                  onChange={this.formatEmail}
+                />
+              </Row>
+              <Row>
+                <Input
+                  s={12}
+                  label="Password"
+                  type="password"
+                  name="password"
+                  onChange={this.formatPass}
+                />
+              </Row>
+              <Row>
+                <Input
+                  s={12}
+                  label="Confirm Password"
+                  type="password"
+                  name="confirmPass"
+                  onChange={this.formatConfirmPass}
+                />
+              </Row>
+              <Row>
+                <Input
+                  s={12}
+                  label="Phone Number"
+                  type="text"
+                  name="phone"
+                  onChange={this.formatPhone}
+                />
+              </Row>
+              <Row>
+                <Input
+                  type="text"
+                  label="ZipCode"
+                  s={12}
+                  name="zipCode"
+                  onChange={this.formatZip}
+                />
+              </Row>
+              <Row style={{ textAlign: "center" }}>
+                <Button>Sign Up</Button>
+              </Row>
+            </div>
           </form>
           <div style={{ textAlign: "center" }}>
             <Link href="login">
