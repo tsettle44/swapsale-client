@@ -4,6 +4,7 @@ import { Row, Input, Button } from "react-materialize";
 
 class PostItem extends React.Component {
   state = {
+    img: "",
     name: "",
     price: 0,
     desc: "",
@@ -16,6 +17,13 @@ class PostItem extends React.Component {
       Router.push("/login");
     }
   }
+
+  formatFiles = e => {
+    e.preventDefault();
+    this.setState({
+      img: e.target.value
+    });
+  };
 
   formatName = e => {
     e.preventDefault();
@@ -54,20 +62,23 @@ class PostItem extends React.Component {
 
   Post = e => {
     e.preventDefault();
+    console.log(document.getElementById("img").files[0]);
+    let formData = new FormData();
+
+    formData.append("img", document.getElementById("img").files[0]);
+    formData.append("name", this.state.name);
+    formData.append(
+      "userId",
+      document.cookie.substring(4, document.cookie.length - 1)
+    );
+    formData.append("price", this.state.price);
+    formData.append("desc", this.state.desc);
+    formData.append("zipCode", this.state.zipCode);
     fetch("http://localhost:5000/api/items", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        userId: document.cookie.substring(4, document.cookie.length - 1),
-        price: this.state.price,
-        desc: this.state.desc,
-        status: this.state.status,
-        zipCode: this.state.zipCode
-      })
+      body: formData
     }).then(r => {
+      console.log(r);
       if (r.status === 204) {
         Router.push("/");
       }
@@ -85,7 +96,18 @@ class PostItem extends React.Component {
           >
             <Row>
               <Input
+                label="Upload Pictures"
+                type="file"
+                multiple
+                name="img"
+                id="img"
+                placeholder="Upload one or more files"
+              />
+            </Row>
+            <Row>
+              <Input
                 s={12}
+                name="name"
                 label="Name"
                 type="text"
                 onChange={this.formatName}
@@ -94,6 +116,7 @@ class PostItem extends React.Component {
             <Row>
               <Input
                 s={12}
+                name="price"
                 label="Price ($ USD)"
                 type="number"
                 onChange={this.formatPrice}
@@ -102,6 +125,7 @@ class PostItem extends React.Component {
             <Row>
               <Input
                 s={12}
+                name="desc"
                 label="Description"
                 type="textarea"
                 onChange={this.formatDesc}
@@ -110,13 +134,14 @@ class PostItem extends React.Component {
             <Row>
               <Input
                 s={12}
+                name="zipCode"
                 label="ZipCode"
                 type="number"
                 onChange={this.formatZip}
               />
             </Row>
             <Row style={{ textAlign: "center" }}>
-              <Button>Post</Button>
+              <Button type="submit">Post Item</Button>
             </Row>
           </form>
         </div>
