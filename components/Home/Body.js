@@ -13,7 +13,6 @@ import Router from "next/router";
 class Body extends React.Component {
   state = {
     items: [],
-    rows: 0,
     search: ""
   };
 
@@ -26,7 +25,7 @@ class Body extends React.Component {
       })
       .then(res => {
         document.getElementById("loader").style.display = "none";
-        this.setState({ items: res, rows: Math.ceil(res.length / 3) });
+        this.setState({ items: res });
       });
   }
 
@@ -65,7 +64,13 @@ class Body extends React.Component {
               <Col l={4} m={6} s={12} key={i}>
                 <Card
                   style={{ cursor: "pointer" }}
-                  header={<CardTitle />}
+                  header={
+                    <CardTitle
+                      image={`http://localhost:5000/api/items/image/${
+                        item.img
+                      }`}
+                    />
+                  }
                   actions={[
                     <a>${item.price}</a>,
                     <a>Zip Code: {item.zipCode}</a>
