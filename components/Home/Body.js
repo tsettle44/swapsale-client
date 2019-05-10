@@ -5,6 +5,7 @@ import {
   Col,
   Card,
   CardTitle,
+  Chip,
   ProgressBar
 } from "react-materialize";
 import Link from "next/link";
@@ -62,10 +63,53 @@ class Body extends React.Component {
           {this.state.items.map((item, i) => (
             <Link key={i} href={`/item?id=${item._id}`}>
               <Col l={4} m={6} s={12} key={i}>
-                <Card
-                  style={{ cursor: "pointer" }}
+                <div
+                  style={{
+                    maxWidth: "100%",
+                    cursor: "pointer",
+                    borderRadius: "5px",
+                    marginBottom: "20px",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+                  }}
+                >
+                  <div>
+                    <img
+                      src={`http://localhost:5000/api/items/image/${item.img}`}
+                      style={{
+                        borderTopLeftRadius: "5px",
+                        borderTopRightRadius: "5px",
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "200px"
+                      }}
+                    />
+                    <p
+                      style={{
+                        display: "inline",
+                        padding: "10px",
+                        fontSize: "1.5rem"
+                      }}
+                    >
+                      {item.name}
+                    </p>
+                    <Chip
+                      style={{
+                        color: "#037200",
+                        float: "right",
+                        paddingRight: "10px"
+                      }}
+                    >
+                      ${item.price}
+                    </Chip>
+                    <p style={{ padding: "10px" }}>Zip Code: {item.zipCode}</p>
+                  </div>
+                </div>
+                {/* <Card
+                  style={{ cursor: "pointer", minHeight: "350px" }}
                   header={
                     <CardTitle
+                      style={{ objectFit: "cover" }}
                       image={`http://localhost:5000/api/items/image/${
                         item.img
                       }`}
@@ -78,7 +122,7 @@ class Body extends React.Component {
                   title={item.name}
                 >
                   {item.description}
-                </Card>
+                </Card> */}
               </Col>
             </Link>
           ))}
