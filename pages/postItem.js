@@ -1,6 +1,7 @@
 import Layout from "../components/Layouts/Layout";
 import Router from "next/router";
 import { Row, Input, Button } from "react-materialize";
+import Compressor from "compressorjs";
 
 class PostItem extends React.Component {
   state = {
@@ -18,69 +19,33 @@ class PostItem extends React.Component {
     }
   }
 
-  formatFiles = e => {
-    e.preventDefault();
-    this.setState({
-      img: e.target.value
-    });
-  };
-
-  formatName = e => {
-    e.preventDefault();
-    this.setState({
-      name: e.target.value
-    });
-  };
-
-  formatPrice = e => {
-    e.preventDefault();
-    this.setState({
-      price: e.target.value
-    });
-  };
-
-  formatDesc = e => {
-    e.preventDefault();
-    this.setState({
-      desc: e.target.value
-    });
-  };
-
-  formatStatus = e => {
-    e.preventDefault();
-    this.setState({
-      status: e.target.value
-    });
-  };
-
-  formatZip = e => {
-    e.preventDefault();
-    this.setState({
-      zipCode: e.target.value
-    });
-  };
-
   Post = e => {
     e.preventDefault();
-    console.log(document.getElementById("img").files[0]);
-    let formData = new FormData();
 
-    formData.append("img", document.getElementById("img").files[0]);
-    formData.append("name", this.state.name);
-    formData.append(
-      "userId",
-      document.cookie.substring(4, document.cookie.length - 1)
-    );
-    formData.append("price", this.state.price);
-    formData.append("desc", this.state.desc);
-    formData.append("zipCode", this.state.zipCode);
-    fetch("http://localhost:5000/api/items", {
-      method: "POST",
-      body: formData
-    }).then(r => {
-      console.log(r);
-      if (r.status === 204) {
-        Router.push("/");
+    new Compressor(document.getElementById("img").files[0], {
+      quality: 0.6,
+      maxWidth: 512,
+      success(result) {
+        const formData = new FormData();
+
+        formData.append("img", result);
+        formData.append("name", document.getElementById("name").value);
+        formData.append(
+          "userId",
+          document.cookie.substring(4, document.cookie.length - 1)
+        );
+        formData.append("price", document.getElementById("price").value);
+        formData.append("desc", document.getElementById("desc").value);
+        formData.append("zipCode", document.getElementById("zipCode").value);
+        fetch("http://localhost:5000/api/items", {
+          method: "POST",
+          body: formData
+        }).then(r => {
+          console.log(r);
+          if (r.status === 204) {
+            Router.push("/");
+          }
+        });
       }
     });
   };
@@ -105,39 +70,33 @@ class PostItem extends React.Component {
               />
             </Row>
             <Row>
-              <Input
-                s={12}
-                name="name"
-                label="Name"
-                type="text"
-                onChange={this.formatName}
-              />
+              <Input s={12} id="name" name="name" label="Name" type="text" />
             </Row>
             <Row>
               <Input
                 s={12}
+                id="price"
                 name="price"
                 label="Price ($ USD)"
                 type="number"
-                onChange={this.formatPrice}
               />
             </Row>
             <Row>
               <Input
                 s={12}
+                id="desc"
                 name="desc"
                 label="Description"
                 type="textarea"
-                onChange={this.formatDesc}
               />
             </Row>
             <Row>
               <Input
                 s={12}
+                id="zipCode"
                 name="zipCode"
                 label="ZipCode"
                 type="number"
-                onChange={this.formatZip}
               />
             </Row>
             <Row style={{ textAlign: "center" }}>

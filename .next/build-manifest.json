@@ -11,7 +11,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/postItem": [
+    "/item": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
@@ -19,7 +19,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/profile": [
+    "/postItem": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
