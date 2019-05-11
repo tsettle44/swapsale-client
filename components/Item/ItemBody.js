@@ -1,9 +1,10 @@
-import { Row, Col, Preloader } from "react-materialize";
+import { Row, Col, Preloader, Carousel } from "react-materialize";
 
 class ItemBody extends React.Component {
   state = {
     item: [],
-    id: this.props.id
+    id: this.props.id,
+    pics: []
   };
 
   componentDidMount() {
@@ -15,7 +16,14 @@ class ItemBody extends React.Component {
       })
       .then(res => {
         document.getElementById("loader").style.display = "none";
-        this.setState({ item: res });
+        this.setState({
+          item: res,
+          pics: [
+            ...res[0].img.map((pic, p) => {
+              return `http://localhost:5000/api/items/image/${pic.filename}`;
+            })
+          ]
+        });
       });
   }
 
@@ -31,7 +39,8 @@ class ItemBody extends React.Component {
           </Col>
         </Row>
         {this.state.item.map((item, i) => (
-          <div>
+          <div key={i}>
+            <Carousel images={this.state.pics} />
             <h1>{item.name}</h1>
             <p>{item.createdAt}</p>
             <p>$ {item.price}</p>

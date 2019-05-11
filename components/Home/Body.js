@@ -3,8 +3,7 @@ import {
   Button,
   Row,
   Col,
-  Card,
-  CardTitle,
+  Carousel,
   Chip,
   ProgressBar
 } from "react-materialize";
@@ -26,7 +25,9 @@ class Body extends React.Component {
       })
       .then(res => {
         document.getElementById("loader").style.display = "none";
-        this.setState({ items: res });
+        this.setState({
+          items: res
+        });
       });
   }
 
@@ -75,7 +76,9 @@ class Body extends React.Component {
                 >
                   <div>
                     <img
-                      src={`http://localhost:5000/api/items/image/${item.img}`}
+                      src={`http://localhost:5000/api/items/image/${
+                        item.img[0].filename
+                      }`}
                       style={{
                         borderTopLeftRadius: "5px",
                         borderTopRightRadius: "5px",
@@ -105,24 +108,6 @@ class Body extends React.Component {
                     <p style={{ padding: "10px" }}>Zip Code: {item.zipCode}</p>
                   </div>
                 </div>
-                {/* <Card
-                  style={{ cursor: "pointer", minHeight: "350px" }}
-                  header={
-                    <CardTitle
-                      style={{ objectFit: "cover" }}
-                      image={`http://localhost:5000/api/items/image/${
-                        item.img
-                      }`}
-                    />
-                  }
-                  actions={[
-                    <a>${item.price}</a>,
-                    <a>Zip Code: {item.zipCode}</a>
-                  ]}
-                  title={item.name}
-                >
-                  {item.description}
-                </Card> */}
               </Col>
             </Link>
           ))}

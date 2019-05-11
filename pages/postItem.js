@@ -22,32 +22,41 @@ class PostItem extends React.Component {
   Post = e => {
     e.preventDefault();
 
-    new Compressor(document.getElementById("img").files[0], {
-      quality: 0.6,
-      maxWidth: 512,
-      success(result) {
-        const formData = new FormData();
+    const files = document.getElementById("img").files;
+    const formData = new FormData();
 
-        formData.append("img", result);
-        formData.append("name", document.getElementById("name").value);
-        formData.append(
-          "userId",
-          document.cookie.substring(4, document.cookie.length - 1)
-        );
-        formData.append("price", document.getElementById("price").value);
-        formData.append("desc", document.getElementById("desc").value);
-        formData.append("zipCode", document.getElementById("zipCode").value);
-        fetch("http://localhost:5000/api/items", {
-          method: "POST",
-          body: formData
-        }).then(r => {
-          console.log(r);
-          if (r.status === 204) {
-            Router.push("/");
+    for (let i = 0; i < files.length; i++) {
+      new Compressor(files[i], {
+        quality: 0.6,
+        maxWidth: 512,
+        success(result) {
+          formData.append("img", result);
+
+          if (i == files.length - 1) {
+            formData.append("name", document.getElementById("name").value);
+            formData.append(
+              "userId",
+              document.cookie.substring(4, document.cookie.length - 1)
+            );
+            formData.append("price", document.getElementById("price").value);
+            formData.append("desc", document.getElementById("desc").value);
+            formData.append(
+              "zipCode",
+              document.getElementById("zipCode").value
+            );
+            fetch("http://localhost:5000/api/items", {
+              method: "POST",
+              body: formData
+            }).then(r => {
+              console.log(r);
+              if (r.status === 204) {
+                Router.push("/");
+              }
+            });
           }
-        });
-      }
-    });
+        }
+      });
+    }
   };
 
   render() {
